@@ -1,0 +1,2 @@
+document.addEventListener("DOMContentLoaded",function(){let t=document.querySelector(".hero");if(t&&768<window.innerWidth){let e=!1;window.addEventListener("scroll",function(){e||(window.requestAnimationFrame(function(){var n=.4*window.pageYOffset;t.style.backgroundPositionY=n+"px",e=!1}),e=!0)})}});
+//# sourceMappingURL=parallax.js.map

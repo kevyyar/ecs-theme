@@ -1,0 +1,41 @@
+@import '../abstracts/variables';
+@import '../abstracts/mixins';
+
+.companies-trust-us {
+  background-color: $background;
+  padding: $space-xl 0;
+
+  .container {
+    @include container;
+  }
+
+  h2 {
+    text-align: center;
+    margin-bottom: $space-lg;
+    color: $text-primary;
+    font-size: $font-size-xl;
+  }
+
+  .companies-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: $space-md;
+    justify-items: center;
+    align-items: center;
+  }
+
+  .company-logo {
+    img {
+      max-width: 120px;
+      height: auto;
+      filter: grayscale(100%);
+      opacity: 0.7;
+      transition: filter 0.3s ease, opacity 0.3s ease;
+
+      &:hover {
+        filter: grayscale(0%);
+        opacity: 1;
+      }
+    }
+  }
+}

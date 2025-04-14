@@ -1,0 +1,103 @@
+@import '../abstracts/variables';
+@import '../abstracts/mixins';
+
+/*------------------------------------*\
+  #FOOTER STYLES
+\*------------------------------------*/
+.site-footer {
+  background-color: #222;
+  color: #fff;
+  padding: 40px 20px;
+}
+
+.footer-container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.footer-columns {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 30px;
+  margin-bottom: 40px;
+}
+
+.footer-column h3 {
+  font-size: 1.5em;
+  margin-bottom: 15px;
+}
+
+.footer-column .column-content {
+  font-size: 0.9em;
+  line-height: 1.6;
+}
+
+.social-links {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  gap: 15px;
+}
+
+.social-links li {
+  display: inline-block;
+}
+
+.social-links a {
+  color: #fff;
+  font-size: 1.2em;
+  transition: color 0.3s;
+}
+
+.social-links a:hover {
+  color: #4CAF50; /* Color de tu marca */
+}
+
+.footer-bottom {
+  text-align: center;
+  border-top: 1px solid #444;
+  padding-top: 20px;
+  font-size: 0.9em;
+}
+
+.footer-bottom a {
+  color: #4CAF50;
+  text-decoration: none;
+  margin: 0 10px;
+}
+
+.footer-bottom a:hover {
+  text-decoration: underline;
+}
+
+.footer-column .contact-phone,
+.footer-column .contact-email {
+    font-size: 0.9em;
+    margin-top: 10px;
+}
+
+.footer-column .contact-phone a,
+.footer-column .contact-email a {
+    color: #fff;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: color 0.3s;
+}
+
+.footer-column .contact-phone a:hover,
+.footer-column .contact-email a:hover {
+    color: #4CAF50; /* Color de tu marca */
+}
+
+.footer-column .contact-phone i,
+.footer-column .contact-email i {
+    font-size: 1.1em;
+}
+
+@media (max-width: 768px) {
+  .footer-columns {
+      grid-template-columns: 1fr;
+  }
+}
