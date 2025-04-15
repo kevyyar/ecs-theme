@@ -16,8 +16,10 @@
             </a>
         </div>
     </section>
+    <!-- Companies That Trust Us & Why Choose Us combined section -->
+    <div style="padding-top: 40px; display: flex; flex-direction: column; justify-content: center;">
     <!-- Companies That Trust Us Section -->
-    <section class="companies-trust-us">
+    <section class="companies-trust-us" data-aos="fade-up">
         <div class="container">
             <h2>Companies That Trust Us</h2>
             <?php if (have_rows('companies_that_trust_us')): ?>
@@ -35,6 +37,32 @@
             <?php endif; ?>
         </div>
     </section>
+    <!-- Why Choose Us Section -->
+    <section class="why-choose-us" data-aos="fade-up">
+        <div class="container">
+            <?php if ($title = get_field('why_choose_us_title')) : ?>
+                <h2><?php echo esc_html($title); ?></h2>
+            <?php else : ?>
+                <h2>Why Seattle Businesses Choose Us for Janitorial Services</h2>
+            <?php endif; ?>
+            <?php if (have_rows('why_choose_us_benefits')) : ?>
+                <ul class="benefits-list">
+                    <?php while (have_rows('why_choose_us_benefits')) : the_row(); ?>
+                        <?php
+                        $icon = get_sub_field('benefit_icon');
+                        $icon_url = $icon ? esc_url($icon['sizes']['large'] ?? $icon['url']) : '';
+                        ?>
+                        <li class="benefit-item" style="background-image: url('<?php echo $icon_url; ?>');">
+                            <span><?php echo esc_html(get_sub_field('benefit_text')); ?></span>
+                        </li>
+                    <?php endwhile; ?>
+                </ul>
+            <?php else : ?>
+                <p>No benefits added yet.</p>
+            <?php endif; ?>
+        </div>
+    </section>
+    </div>
     <section class="services" data-aos="fade-up">
         <h2>Our Services</h2>
         <?php if (have_rows('services')) : ?>
@@ -107,6 +135,80 @@
             <?php else: ?>
                 <p>No testimonials available.</p>
             <?php endif; ?>
+        </div>
+    </section>
+    <!-- Local Partner Section -->
+    <?php
+    $local_partner_bg = get_field('local_partner_bg_image');
+    $local_bg_url = '';
+    if ($local_partner_bg && is_array($local_partner_bg) && !empty($local_partner_bg)) {
+        $local_bg_url = esc_url($local_partner_bg['url']);
+    }
+    ?>
+    <section class="local-partner" data-aos="fade-up" style="background-image: url('<?php echo $local_bg_url; ?>');">
+        <div class="container">
+            <?php if ($title = get_field('local_partner_title')) : ?>
+                <h2><?php echo esc_html($title); ?></h2>
+            <?php else : ?>
+                <h2>Your Local Partner for Exceptional Janitorial Services</h2>
+            <?php endif; ?>
+            <?php if ($content = get_field('local_partner_content')) : ?>
+                <div class="local-partner-content">
+                    <?php echo wp_kses_post($content); ?>
+                </div>
+            <?php else : ?>
+                <div class="local-partner-content">
+                    <p>When you choose carpet cleaning from BCS, you get a deeper professional cleaning, faster-drying carpet and a healthier home and office. Does anyone in your home or office suffer from asthma or allergies and you are concerned about air quality and allergens? Do your children love to roll around and play on the carpet and you're worried about bacteria and microorganisms?</p>
+                </div>
+            <?php endif; ?>
+            <a href="<?php echo esc_url(get_permalink(get_page_by_path('contact'))); ?>" class="consultation-btn">
+                Schedule a Consultation
+            </a>
+        </div>
+    </section>
+    
+    <!-- Final CTA Section -->
+    <section class="final-cta">
+        <div class="container">
+            <?php if ($headline = get_field('final_cta_headline')) : ?>
+                <h2><?php echo esc_html($headline); ?></h2>
+            <?php else : ?>
+                <h2>Ready for a Spotless Seattle Workspace?</h2>
+            <?php endif; ?>
+            
+            <?php if ($supporting_text = get_field('final_cta_supporting_text')) : ?>
+                <div class="supporting-text"><?php echo esc_html($supporting_text); ?></div>
+            <?php else : ?>
+                <div class="supporting-text">Experience the Element difference with our professional cleaning services. Let us help you maintain a clean, healthy environment for your business.</div>
+            <?php endif; ?>
+            
+            <?php 
+            $cta_text = get_field('final_cta_button_text') ?: 'Get Your Free Quote Today';
+            $cta_link = get_field('final_cta_button_link') ?: get_permalink(get_page_by_path('contact'));
+            ?>
+            <a href="<?php echo esc_url($cta_link); ?>" class="cta-button">
+                <?php echo esc_html($cta_text); ?>
+            </a>
+            
+            <div class="contact-info">
+                <?php if ($phone = get_field('company_phone', 'option')) : ?>
+                    <div class="contact-item">
+                        <i class="fas fa-phone"></i>
+                        <a href="tel:<?php echo esc_attr(preg_replace('/[^0-9]/', '', $phone)); ?>">
+                            <?php echo esc_html($phone); ?>
+                        </a>
+                    </div>
+                <?php endif; ?>
+                
+                <?php if ($email = get_field('company_email', 'option')) : ?>
+                    <div class="contact-item">
+                        <i class="fas fa-envelope"></i>
+                        <a href="mailto:<?php echo esc_attr($email); ?>">
+                            <?php echo esc_html($email); ?>
+                        </a>
+                    </div>
+                <?php endif; ?>
+            </div>
         </div>
     </section>
 </main>

@@ -1,10 +1,13 @@
+@import '../abstracts/variables';
+
 /*------------------------------------*\
   #SERVICES SECTION STYLES
 \*------------------------------------*/
 .services {
-  padding: 50px 20px;
+  // min-height: 100vh;
+  // padding: 50px 20px;
+  margin: 80px 0;
   text-align: center;
-  background: #fff;
 
   h2 {
     font-size: 2rem;
@@ -22,7 +25,7 @@
     flex: 1 1 300px;
     max-width: 300px;
     padding: 0;
-    background: #f8f8f8;
+    background: $background-alt;
     border-radius: 5px;
     overflow: hidden;
 

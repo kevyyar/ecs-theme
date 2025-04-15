@@ -1,0 +1,71 @@
+@import '../abstracts/variables';
+
+.local-partner {
+  padding: 80px 0;  
+  background-color: #333; // Fallback color if image fails to load
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  color: white;
+  text-align: center;
+  
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.65); // Dark overlay
+    z-index: 1;
+  }
+
+  .container {
+    max-width: $container-width;
+    margin: 0 auto;
+    padding: $space-lg $space-md;
+    position: relative;
+    z-index: 2; // Place above the overlay
+  }
+
+  h2 {
+    font-size: $font-size-xl;
+    margin-bottom: $space-md;
+    color: white;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+
+    @media (max-width: 768px) {
+      font-size: 1.8em;
+    }
+  }
+
+  .local-partner-content {
+    max-width: 800px;
+    margin: 0 auto;
+    font-size: $font-size-base;
+    color: white;
+    line-height: 1.8;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+
+    p {
+      margin-bottom: $gap-md;
+    }
+  }
+  
+  // Add a CTA button similar to the one in the image
+  .consultation-btn {
+    display: inline-block;
+    background-color: #c62828;
+    color: white;
+    padding: $space-sm $space-md;
+    border-radius: 4px;
+    font-weight: bold;
+    margin-top: $space-md;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+    
+    &:hover {
+      background-color: darken(#c62828, 10%);
+    }
+  }
+}

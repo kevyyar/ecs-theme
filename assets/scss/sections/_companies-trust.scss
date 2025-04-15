@@ -2,8 +2,7 @@
 @import '../abstracts/mixins';
 
 .companies-trust-us {
-  background-color: $background;
-  padding: $space-xl 0;
+  padding: $space-lg 0;
 
   .container {
     @include container;

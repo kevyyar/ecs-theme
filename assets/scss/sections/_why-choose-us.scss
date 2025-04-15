@@ -1,0 +1,102 @@
+@import '../abstracts/variables';
+
+.why-choose-us {
+    padding: $space-md $space-sm;
+
+    .container {
+        max-width: $container-width;
+        margin: 0 auto;
+        text-align: center;
+    }
+
+    h2 {
+        font-size: $font-size-xl;
+        margin-bottom: $space-md;
+        color: $text-primary;
+
+        @media (max-width: 768px) {
+            font-size: 1.8em;
+        }
+    }
+
+    .benefits-list {
+        list-style: none;
+        padding: 0;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: $gap-lg;
+
+        @media (max-width: 768px) {
+            grid-template-columns: 1fr;
+        }
+    }
+
+    .benefit-item {
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        min-width: 260px;
+        min-height: 220px;
+        padding: 32px 20px;
+        border-radius: 18px;
+        box-shadow: 0 4px 24px rgba(0,0,0,0.08), 0 1.5px 6px rgba(0,0,0,0.04);
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        overflow: hidden;
+        color: $text-primary;
+        text-align: center;
+        transition: box-shadow 0.2s, transform 0.2s;
+        z-index: 1;
+
+        &:hover {
+            box-shadow: 0 8px 32px rgba(0,0,0,0.14), 0 3px 12px rgba(0,0,0,0.08);
+            transform: translateY(-4px) scale(1.03);
+        }
+
+        &::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: rgba(0,0,0,0.32); // dark overlay for readability
+            z-index: 1;
+        }
+
+        > span {
+            position: relative;
+            z-index: 2;
+            font-size: 1.25rem;
+            font-weight: 600;
+            color: #fff;
+            text-shadow: 0 2px 8px rgba(0,0,0,0.18);
+            width: 100%;
+            display: block;
+        }
+    }
+
+    .benefit-icon {
+        display: none;
+    }
+}
+
+@media (min-width: 1024px) {
+  .why-choose-us .benefit-icon {
+    width: 80px;
+    height: 80px;
+    max-width: none;
+    max-height: none;
+    display: block;
+    margin-bottom: 16px;
+  }
+  .why-choose-us .benefit-item {
+    font-size: 1.35rem;
+    padding: 24px 12px;
+  }
+  .why-choose-us .benefit-item > span {
+    font-size: 1.35rem;
+    line-height: 1.5;
+    font-weight: 500;
+    padding: 0 8px;
+  }
+}

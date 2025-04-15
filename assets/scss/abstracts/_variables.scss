@@ -1,11 +1,17 @@
 // Color Palette
-$primary: #007bff; // Bright Blue for CTAs
-$secondary: #4caa48; // Soft Green for accents
-$background: #ffffff; // White for main backgrounds
-$background-alt: #f8f8f8; // Light Gray for contrast
-$text-primary: #333333; // Dark Gray for body text
-$text-secondary: #666666; // Medium Gray for secondary text
-$overlay: rgba(0, 0, 0, 0.3); // Hero overlay
+$primary: #007bff;
+$secondary: #4caa48;
+$background: #f8f9fa;
+$background-alt: #f1f3f5;
+$text-primary: #333333; 
+$text-secondary: #666666; 
+$overlay: rgba(0, 0, 0, 0.3); 
+$dark-bg: #222;
+$light-bg: #f8f9fa;
+$white: #fff;
+$border-color: #444;
+$brand-color: #4CAF50;
+$container-width: 1200px;
 
 // Spacing
 $space-xs: 0.5rem; // 8px
@@ -14,11 +20,14 @@ $space-md: 1.5rem; // 24px
 $space-lg: 2rem; // 32px
 $space-xl: 4rem; // 64px
 $space-xxl: 6rem; // 96px
+$gap-lg: 2rem; // 32px
+$gap-md: 1.5rem; // 24px
+$gap-sm: 1rem; // 16px
 
 // Typography
 $font-primary: 'Open Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI',
   Roboto, sans-serif;
-$font-secondary: 'Georgia', serif; // For quotes or accents
+$font-secondary: 'Georgia', serif;
 $font-size-base: 16px;
 $font-size-sm: 0.875rem; // 14px
 $font-size-md: 1rem; // 16px
@@ -30,3 +39,4 @@ $font-weight-regular: 400;
 $font-weight-bold: 700;
 $line-height-base: 1.5;
 $line-height-heading: 1.2;
+$icon-size: 2rem;

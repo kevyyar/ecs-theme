@@ -1,0 +1,89 @@
+@import '../abstracts/variables';
+
+.final-cta {
+  padding: $space-xl 0;
+  background: linear-gradient(135deg, $primary 0%, darken($primary, 20%) 100%);
+  color: white;
+  text-align: center;
+  
+  .container {
+    max-width: $container-width;
+    margin: 0 auto;
+    padding: 0 $space-md;
+  }
+  
+  h2 {
+    font-size: $font-size-xl;
+    margin-bottom: $space-sm;
+    font-weight: $font-weight-bold;
+    color: white;
+  }
+  
+  .supporting-text {
+    font-size: $font-size-lg;
+    margin-bottom: $space-lg;
+    max-width: 760px;
+    margin-left: auto;
+    margin-right: auto;
+    line-height: 1.5;
+  }
+  
+  .cta-button {
+    display: inline-block;
+    background-color: white;
+    color: $primary;
+    font-weight: $font-weight-bold;
+    font-size: 1.1rem;
+    padding: $space-sm $space-lg;
+    border-radius: 4px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    margin-bottom: $space-lg;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    
+    &:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
+    }
+  }
+  
+  .contact-info {
+    margin-top: $space-md;
+    
+    .contact-item {
+      display: inline-block;
+      margin: 0 $space-md;
+      font-size: 1.1rem;
+      
+      i {
+        margin-right: $space-xs;
+      }
+      
+      a {
+        color: white;
+        text-decoration: none;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+        transition: border-color 0.3s ease;
+        
+        &:hover {
+          border-color: white;
+        }
+      }
+    }
+  }
+  
+  @media (max-width: 768px) {
+    h2 {
+      font-size: 1.75rem;
+    }
+    
+    .supporting-text {
+      font-size: 1rem;
+    }
+    
+    .contact-info .contact-item {
+      display: block;
+      margin: $space-xs 0;
+    }
+  }
+}
