@@ -18,50 +18,50 @@
 	</section>
 	<!-- Companies That Trust Us & Why Choose Us combined section -->
 	<div style="padding-top: 40px; display: flex; flex-direction: column; justify-content: center;">
-	<!-- Companies That Trust Us Section -->
-	<section class="companies-trust-us" data-aos="fade-up">
-		<div class="container">
-			<h2>Companies That Trust Us</h2>
-			<?php if (have_rows('companies_that_trust_us')): ?>
-				<div class="companies-grid" data-aos="fade-up">
-					<?php while (have_rows('companies_that_trust_us')): the_row(); ?>
-						<?php if ($logo = get_sub_field('company_logo')): ?>
-							<div class="company-logo">
-								<img src="<?php echo esc_url($logo['sizes']['thumbnail']); ?>" alt="<?php echo esc_attr(get_sub_field('company_name') ?: 'Company Logo'); ?>" title="<?php echo esc_attr(get_sub_field('company_name')); ?>">
-							</div>
-						<?php endif; ?>
-					<?php endwhile; ?>
-				</div>
-			<?php else: ?>
-				<p>No companies added yet.</p>
-			<?php endif; ?>
-		</div>
-	</section>
-	<!-- Why Choose Us Section -->
-	<section class="why-choose-us" data-aos="fade-up">
-		<div class="container">
-			<?php if ($title = get_field('why_choose_us_title')) : ?>
-				<h2><?php echo esc_html($title); ?></h2>
-			<?php else : ?>
-				<h2>Why Seattle Businesses Choose Us for Janitorial Services</h2>
-			<?php endif; ?>
-			<?php if (have_rows('why_choose_us_benefits')) : ?>
-				<ul class="benefits-list">
-					<?php while (have_rows('why_choose_us_benefits')) : the_row(); ?>
-						<?php
-						$icon = get_sub_field('benefit_icon');
-						$icon_url = $icon ? esc_url($icon['sizes']['large'] ?? $icon['url']) : '';
-						?>
-						<li class="benefit-item" style="background-image: url('<?php echo $icon_url; ?>');">
-							<span><?php echo esc_html(get_sub_field('benefit_text')); ?></span>
-						</li>
-					<?php endwhile; ?>
-				</ul>
-			<?php else : ?>
-				<p>No benefits added yet.</p>
-			<?php endif; ?>
-		</div>
-	</section>
+		<!-- Companies That Trust Us Section -->
+		<section class="companies-trust-us" data-aos="fade-up">
+			<div class="container">
+				<h2>Companies That Trust Us</h2>
+				<?php if (have_rows('companies_that_trust_us')): ?>
+					<div class="companies-grid" data-aos="fade-up">
+						<?php while (have_rows('companies_that_trust_us')): the_row(); ?>
+							<?php if ($logo = get_sub_field('company_logo')): ?>
+								<div class="company-logo">
+									<img src="<?php echo esc_url($logo['sizes']['thumbnail']); ?>" alt="<?php echo esc_attr(get_sub_field('company_name') ?: 'Company Logo'); ?>" title="<?php echo esc_attr(get_sub_field('company_name')); ?>">
+								</div>
+							<?php endif; ?>
+						<?php endwhile; ?>
+					</div>
+				<?php else: ?>
+					<p>No companies added yet.</p>
+				<?php endif; ?>
+			</div>
+		</section>
+		<!-- Why Choose Us Section -->
+		<section class="why-choose-us" data-aos="fade-up">
+			<div class="container">
+				<?php if ($title = get_field('why_choose_us_title')) : ?>
+					<h2><?php echo esc_html($title); ?></h2>
+				<?php else : ?>
+					<h2>Why Seattle Businesses Choose Us for Janitorial Services</h2>
+				<?php endif; ?>
+				<?php if (have_rows('why_choose_us_benefits')) : ?>
+					<ul class="benefits-list">
+						<?php while (have_rows('why_choose_us_benefits')) : the_row(); ?>
+							<?php
+							$icon = get_sub_field('benefit_icon');
+							$icon_url = $icon ? esc_url($icon['sizes']['large'] ?? $icon['url']) : '';
+							?>
+							<li class="benefit-item" style="background-image: url('<?php echo $icon_url; ?>');">
+								<span><?php echo esc_html(get_sub_field('benefit_text')); ?></span>
+							</li>
+						<?php endwhile; ?>
+					</ul>
+				<?php else : ?>
+					<p>No benefits added yet.</p>
+				<?php endif; ?>
+			</div>
+		</section>
 	</div>
 	<section class="services" data-aos="fade-up">
 		<h2>Our Services</h2>
@@ -169,62 +169,62 @@
 
 	<!-- Final CTA Section -->
 	<section class="final-cta" data-aos="fade-up">
-	<div class="container">
-		<div class="cta-grid">
-			<div class="cta-content">
-				<?php if ($headline = get_field('final_cta_headline')) : ?>
-					<h2><?php echo esc_html($headline); ?></h2>
-				<?php else : ?>
-					<h2>Ready for a Spotless Seattle Workspace?</h2>
-				<?php endif; ?>
-
-				<?php if ($supporting_text = get_field('final_cta_supporting_text')) : ?>
-					<div class="supporting-text"><?php echo esc_html($supporting_text); ?></div>
-				<?php else : ?>
-					<div class="supporting-text">Experience the Element difference with our professional cleaning services. Let us help you maintain a clean, healthy environment for your business.</div>
-				<?php endif; ?>
-
-				<?php
-				$cta_text = get_field('final_cta_button_text') ?: 'Get Your Free Quote Today';
-				$cta_link = get_field('final_cta_button_link') ?: get_permalink(get_page_by_path('contact'));
-				?>
-				<a href="<?php echo esc_url($cta_link); ?>" class="cta-button">
-					<?php echo esc_html($cta_text); ?>
-				</a>
-
-				<div class="contact-info">
-					<?php if ($phone = get_field('company_phone', 'option')) : ?>
-						<div class="contact-item">
-							<i class="fas fa-phone"></i>
-							<a href="tel:<?php echo esc_attr(preg_replace('/[^0-9]/', '', $phone)); ?>">
-								<?php echo esc_html($phone); ?>
-							</a>
-						</div>
+		<div class="container">
+			<div class="cta-grid">
+				<div class="cta-content">
+					<?php if ($headline = get_field('final_cta_headline')) : ?>
+						<h2><?php echo esc_html($headline); ?></h2>
+					<?php else : ?>
+						<h2>Ready for a Spotless Seattle Workspace?</h2>
 					<?php endif; ?>
 
-					<?php if ($email = get_field('company_email', 'option')) : ?>
-						<div class="contact-item">
-							<i class="fas fa-envelope"></i>
-							<a href="mailto:<?php echo esc_attr($email); ?>">
-								<?php echo esc_html($email); ?>
-							</a>
-						</div>
+					<?php if ($supporting_text = get_field('final_cta_supporting_text')) : ?>
+						<div class="supporting-text"><?php echo esc_html($supporting_text); ?></div>
+					<?php else : ?>
+						<div class="supporting-text">Experience the Element difference with our professional cleaning services. Let us help you maintain a clean, healthy environment for your business.</div>
 					<?php endif; ?>
+
+					<?php
+					$cta_text = get_field('final_cta_button_text') ?: 'Get Your Free Quote Today';
+					$cta_link = get_field('final_cta_button_link') ?: get_permalink(get_page_by_path('contact'));
+					?>
+					<a href="<?php echo esc_url($cta_link); ?>" class="cta-button">
+						<?php echo esc_html($cta_text); ?>
+					</a>
+
+					<div class="contact-info">
+						<?php if ($phone = get_field('company_phone', 'option')) : ?>
+							<div class="contact-item">
+								<i class="fas fa-phone"></i>
+								<a href="tel:<?php echo esc_attr(preg_replace('/[^0-9]/', '', $phone)); ?>">
+									<?php echo esc_html($phone); ?>
+								</a>
+							</div>
+						<?php endif; ?>
+
+						<?php if ($email = get_field('company_email', 'option')) : ?>
+							<div class="contact-item">
+								<i class="fas fa-envelope"></i>
+								<a href="mailto:<?php echo esc_attr($email); ?>">
+									<?php echo esc_html($email); ?>
+								</a>
+							</div>
+						<?php endif; ?>
+					</div>
+				</div>
+				<div class="cta-form">
+					<h3>Request a Quote</h3>
+					<?php
+					$form_shortcode = get_field('final_cta_form_shortcode');
+					if ($form_shortcode) {
+						echo do_shortcode($form_shortcode);
+					} else {
+						echo do_shortcode('[contact-form-7 id="bd244cb" title="Request a Quote Form"]');
+					}
+					?>
 				</div>
 			</div>
-			<div class="cta-form">
-				<h3>Request a Quote</h3>
-				<?php
-				$form_shortcode = get_field('final_cta_form_shortcode');
-				if ($form_shortcode) {
-					echo do_shortcode($form_shortcode);
-				} else {
-					echo do_shortcode('[contact-form-7 id="bd244cb" title="Request a Quote Form"]');
-				}
-				?>
-			</div>
 		</div>
-	</div>
-</section>
+	</section>
 </main>
 <?php get_footer(); ?>
