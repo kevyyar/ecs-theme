@@ -60,9 +60,6 @@ function ecs_theme_scripts()
 	// Enqueue compiled styles
 	wp_enqueue_style('ecs-style', get_template_directory_uri() . '/assets/css/style.css', array(), wp_get_theme()->get('Version'), 'all');
 
-	// Enqueue main JS (already existing)
-	wp_enqueue_script('ecs-script', get_template_directory_uri() . '/assets/js/main.js', array(), wp_get_theme()->get('Version'), true);
-
 	// Enqueue minified parallax JS
 	wp_enqueue_script(
 		'ecs-parallax',
