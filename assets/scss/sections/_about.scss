@@ -1,11 +1,15 @@
 @import '../abstracts/variables';
 @import '../abstracts/mixins';
 
+/* ------------------------------------*\
+  #ABOUT PAGE STYLES
+\*------------------------------------ */
+
 .about-hero {
   position: relative;
   text-align: left;
   padding: $space-xl $space-sm;
-  height: 70vh;
+  height: 100vh;
   min-height: 500px;
   display: flex;
   flex-direction: column;
@@ -17,22 +21,41 @@
   background-attachment: scroll;
   background-color: $text-secondary;
 
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.4);
+    z-index: 1;
+  }
+
   .hero-content {
     position: relative;
     z-index: 2;
     max-width: 50%;
     margin: 0;
+    padding: $space-md;
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 
     h1 {
       font-size: $font-size-xxl;
       margin-bottom: $space-sm;
       color: $brand-color;
+      font-weight: $font-weight-bold;
+      text-transform: uppercase;
+      letter-spacing: 1px;
     }
 
     p {
       font-size: $font-size-lg;
       margin-bottom: $space-lg;
       line-height: 1.6;
+      color: $text-primary;
     }
   }
 
@@ -50,7 +73,7 @@
 
 .about-values {
   padding: $space-xl $space-sm;
-  background-color: #f8f9fa;
+  background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%); // Subtle gradient background
 
   .container {
     @include container;
@@ -61,6 +84,20 @@
     margin-bottom: $space-lg;
     color: $text-primary;
     text-align: center;
+    position: relative;
+    padding-bottom: $space-sm;
+
+    // Add an underline effect
+    &::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 50px;
+      height: 3px;
+      background: $brand-color;
+    }
   }
 
   .values-grid {
@@ -73,18 +110,33 @@
   .value-item {
     text-align: center;
     padding: $space-md;
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+    &:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 6px 16px rgba(0, 0, 0, 0.12);
+    }
 
     .value-icon {
       font-size: 2rem;
       color: $brand-color;
       margin-bottom: $space-sm;
       display: block;
+      transition: transform 0.3s ease;
+
+      &:hover {
+        transform: scale(1.1);
+      }
     }
 
     h3 {
       font-size: 1.25rem;
       margin-bottom: $space-sm;
       color: $text-primary;
+      font-weight: $font-weight-bold;
     }
 
     p {
@@ -103,6 +155,7 @@
 
 .about-history {
   padding: $space-xl $space-sm;
+  background-color: #fff;
 
   .container {
     @include container;
@@ -113,12 +166,27 @@
     font-size: $font-size-xl;
     margin-bottom: $space-sm;
     color: $text-primary;
+    position: relative;
+    padding-bottom: $space-sm;
+
+    &::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 50px;
+      height: 3px;
+      background: $brand-color;
+    }
   }
 
   h3 {
     font-size: 1.5rem;
     margin-bottom: $space-md;
     color: $brand-color;
+    font-style: italic;
+    font-weight: $font-weight-regular;
   }
 
   p {
@@ -127,12 +195,16 @@
     line-height: 1.8;
     max-width: 800px;
     margin: 0 auto;
+    background: #f8f9fa;
+    padding: $space-md;
+    border-left: 4px solid $brand-color;
+    border-radius: 4px;
   }
 }
 
 .about-team {
   padding: $space-xl $space-sm;
-  background-color: #f8f9fa;
+  background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
 
   .container {
     @include container;
@@ -143,6 +215,19 @@
     font-size: $font-size-xl;
     margin-bottom: $space-lg;
     color: $text-primary;
+    position: relative;
+    padding-bottom: $space-sm;
+
+    &::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 50px;
+      height: 3px;
+      background: $brand-color;
+    }
   }
 
   .team-carousel {
@@ -151,25 +236,41 @@
     .team-member {
       text-align: center;
       padding: $space-sm;
+      background: #fff;
+      border-radius: 8px;
+      margin: 0 $space-sm;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+      &:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 6px 16px rgba(0, 0, 0, 0.12);
+      }
 
       .member-image {
         width: 100%;
         height: 250px;
         object-fit: cover;
-        border-radius: 8px;
+        border-radius: 8px 8px 0 0;
         margin-bottom: $space-sm;
+        transition: opacity 0.3s ease;
+
+        &:hover {
+          opacity: 0.9;
+        }
       }
 
       h3 {
         font-size: 1.25rem;
         margin-bottom: $space-xs;
         color: $text-primary;
+        font-weight: $font-weight-bold;
       }
 
       .member-role {
         font-size: $font-size-md;
         color: $brand-color;
         font-weight: 500;
+        margin-bottom: $space-sm;
       }
     }
 
@@ -178,18 +279,19 @@
     .slick-next {
       width: 40px;
       height: 40px;
-      background: rgba(255, 255, 255, 0.8);
+      background: $brand-color;
       border-radius: 50%;
-      transition: background 0.3s ease;
+      transition: background 0.3s ease, transform 0.3s ease;
       z-index: 1;
 
       &:before {
-        color: $brand-color;
+        color: #fff;
         font-size: 1rem;
       }
 
       &:hover {
-        background: rgba(255, 255, 255, 1);
+        background: darken($brand-color, 10%);
+        transform: scale(1.1);
       }
     }
 
@@ -210,11 +312,16 @@
           font-size: 10px;
           color: $text-secondary;
           opacity: 0.5;
+          transition: opacity 0.3s ease;
         }
 
         &.slick-active button:before {
           color: $brand-color;
           opacity: 1;
+        }
+
+        &:hover button:before {
+          opacity: 0.8;
         }
       }
     }
@@ -237,12 +344,23 @@
       .team-member {
         width: 100%;
       }
+
+      .slick-prev,
+      .slick-next {
+        width: 30px;
+        height: 30px;
+
+        &:before {
+          font-size: 0.8rem;
+        }
+      }
     }
   }
 }
 
 .about-location {
   padding: $space-xl $space-sm;
+  background-color: #fff;
 
   .container {
     @include container;
@@ -253,6 +371,19 @@
     font-size: $font-size-xl;
     margin-bottom: $space-md;
     color: $text-primary;
+    position: relative;
+    padding-bottom: $space-sm;
+
+    &::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 50px;
+      height: 3px;
+      background: $brand-color;
+    }
   }
 
   p {
@@ -261,5 +392,9 @@
     line-height: 1.8;
     max-width: 800px;
     margin: 0 auto;
+    background: #f8f9fa;
+    padding: $space-md;
+    border-left: 4px solid $brand-color;
+    border-radius: 4px;
   }
 }
