@@ -2,6 +2,7 @@
 @use 'abstracts/variables';
 @use 'abstracts/mixins';
 @use 'layouts/header';
+
 @use 'sections/hero';
 @use 'sections/why-choose-us';
 @use 'sections/companies-trust';
@@ -9,4 +10,6 @@
 @use 'sections/testimonials';
 @use 'sections/local-partner';
 @use 'sections/final-cta';
+@use 'sections/about';
+
 @use 'layouts/footer';

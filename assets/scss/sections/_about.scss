@@ -1,0 +1,265 @@
+@import '../abstracts/variables';
+@import '../abstracts/mixins';
+
+.about-hero {
+  position: relative;
+  text-align: left;
+  padding: $space-xl $space-sm;
+  height: 70vh;
+  min-height: 500px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  color: $text-primary;
+  background-attachment: scroll;
+  background-color: $text-secondary;
+
+  .hero-content {
+    position: relative;
+    z-index: 2;
+    max-width: 50%;
+    margin: 0;
+
+    h1 {
+      font-size: $font-size-xxl;
+      margin-bottom: $space-sm;
+      color: $brand-color;
+    }
+
+    p {
+      font-size: $font-size-lg;
+      margin-bottom: $space-lg;
+      line-height: 1.6;
+    }
+  }
+
+  @media (max-width: 768px) {
+    height: 50vh;
+    min-height: 400px;
+    text-align: center;
+
+    .hero-content {
+      max-width: 90%;
+      margin: 0 auto;
+    }
+  }
+}
+
+.about-values {
+  padding: $space-xl $space-sm;
+  background-color: #f8f9fa;
+
+  .container {
+    @include container;
+  }
+
+  h2 {
+    font-size: $font-size-xl;
+    margin-bottom: $space-lg;
+    color: $text-primary;
+    text-align: center;
+  }
+
+  .values-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: $gap-lg;
+    margin-top: $space-md;
+  }
+
+  .value-item {
+    text-align: center;
+    padding: $space-md;
+
+    .value-icon {
+      font-size: 2rem;
+      color: $brand-color;
+      margin-bottom: $space-sm;
+      display: block;
+    }
+
+    h3 {
+      font-size: 1.25rem;
+      margin-bottom: $space-sm;
+      color: $text-primary;
+    }
+
+    p {
+      font-size: $font-size-md;
+      color: $text-secondary;
+      line-height: 1.6;
+    }
+  }
+
+  @media (max-width: 768px) {
+    .values-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+}
+
+.about-history {
+  padding: $space-xl $space-sm;
+
+  .container {
+    @include container;
+    text-align: center;
+  }
+
+  h2 {
+    font-size: $font-size-xl;
+    margin-bottom: $space-sm;
+    color: $text-primary;
+  }
+
+  h3 {
+    font-size: 1.5rem;
+    margin-bottom: $space-md;
+    color: $brand-color;
+  }
+
+  p {
+    font-size: $font-size-md;
+    color: $text-secondary;
+    line-height: 1.8;
+    max-width: 800px;
+    margin: 0 auto;
+  }
+}
+
+.about-team {
+  padding: $space-xl $space-sm;
+  background-color: #f8f9fa;
+
+  .container {
+    @include container;
+    text-align: center;
+  }
+
+  h2 {
+    font-size: $font-size-xl;
+    margin-bottom: $space-lg;
+    color: $text-primary;
+  }
+
+  .team-carousel {
+    position: relative;
+
+    .team-member {
+      text-align: center;
+      padding: $space-sm;
+
+      .member-image {
+        width: 100%;
+        height: 250px;
+        object-fit: cover;
+        border-radius: 8px;
+        margin-bottom: $space-sm;
+      }
+
+      h3 {
+        font-size: 1.25rem;
+        margin-bottom: $space-xs;
+        color: $text-primary;
+      }
+
+      .member-role {
+        font-size: $font-size-md;
+        color: $brand-color;
+        font-weight: 500;
+      }
+    }
+
+    // Navigation arrows
+    .slick-prev,
+    .slick-next {
+      width: 40px;
+      height: 40px;
+      background: rgba(255, 255, 255, 0.8);
+      border-radius: 50%;
+      transition: background 0.3s ease;
+      z-index: 1;
+
+      &:before {
+        color: $brand-color;
+        font-size: 1rem;
+      }
+
+      &:hover {
+        background: rgba(255, 255, 255, 1);
+      }
+    }
+
+    .slick-prev {
+      left: -50px;
+    }
+
+    .slick-next {
+      right: -50px;
+    }
+
+    // Pagination dots
+    .slick-dots {
+      margin-top: $space-md;
+
+      li {
+        button:before {
+          font-size: 10px;
+          color: $text-secondary;
+          opacity: 0.5;
+        }
+
+        &.slick-active button:before {
+          color: $brand-color;
+          opacity: 1;
+        }
+      }
+    }
+  }
+
+  @media (max-width: 1024px) {
+    .team-carousel {
+      .slick-prev {
+        left: 10px;
+      }
+
+      .slick-next {
+        right: 10px;
+      }
+    }
+  }
+
+  @media (max-width: 768px) {
+    .team-carousel {
+      .team-member {
+        width: 100%;
+      }
+    }
+  }
+}
+
+.about-location {
+  padding: $space-xl $space-sm;
+
+  .container {
+    @include container;
+    text-align: center;
+  }
+
+  h2 {
+    font-size: $font-size-xl;
+    margin-bottom: $space-md;
+    color: $text-primary;
+  }
+
+  p {
+    font-size: $font-size-md;
+    color: $text-secondary;
+    line-height: 1.8;
+    max-width: 800px;
+    margin: 0 auto;
+  }
+}
