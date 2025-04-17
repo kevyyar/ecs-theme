@@ -20,7 +20,7 @@ get_header(); ?>
     </section>
 
     <!-- Values Section -->
-    <section class="about-values">
+    <section class="about-values" data-aos="fade-up">
         <div class="container">
             <h2><?php echo esc_html(get_field('values_title') ?: 'What We Stand For'); ?></h2>
             <?php if (have_rows('values')) : ?>
@@ -40,7 +40,7 @@ get_header(); ?>
     </section>
 
     <!-- History Section -->
-    <section class="about-history">
+    <section class="about-history" data-aos="fade-up">
         <div class="container">
             <h2><?php echo esc_html(get_field('history_title') ?: 'Where We’ve Been and Where We’re Going'); ?></h2>
             <h3>Our History</h3>
@@ -49,11 +49,11 @@ get_header(); ?>
     </section>
 
     <!-- Team Section (Carousel) -->
-    <section class="about-team">
+    <section class="about-team" data-aos="fade-up">
         <div class="container">
             <h2><?php echo esc_html(get_field('team_title') ?: 'Our Corporate Staff'); ?></h2>
             <?php if (have_rows('team_members')) : ?>
-                <div class="team-carousel">
+                <div class="team-carousel" role="region" aria-label="Team Members Carousel">
                     <?php while (have_rows('team_members')) : the_row(); ?>
                         <div class="team-member">
                             <?php

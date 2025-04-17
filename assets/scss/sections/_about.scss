@@ -4,12 +4,11 @@
 /* ------------------------------------*\
   #ABOUT PAGE STYLES
 \*------------------------------------ */
-
 .about-hero {
   position: relative;
   text-align: left;
   padding: $space-xl $space-sm;
-  height: 100vh;
+  height: 70vh;
   min-height: 500px;
   display: flex;
   flex-direction: column;
@@ -21,6 +20,7 @@
   background-attachment: scroll;
   background-color: $text-secondary;
 
+  // Add a subtle overlay for better text readability
   &::before {
     content: '';
     position: absolute;
@@ -60,20 +60,48 @@
   }
 
   @media (max-width: 768px) {
-    height: 50vh;
-    min-height: 400px;
+    height: 40vh; // Reduced height for mobile
+    min-height: 300px; // Ensure it’s not too tall
+    padding: $space-md $space-sm; // Reduce padding for smaller screens
     text-align: center;
 
     .hero-content {
-      max-width: 90%;
-      margin: 0 auto;
+      max-width: 100%; // Full width on mobile
+      margin: 0 $space-sm; // Add small horizontal margin
+      padding: $space-sm; // Reduce padding inside the content card
+
+      h1 {
+        font-size: 2rem; // Smaller font size for mobile
+        margin-bottom: $space-xs;
+      }
+
+      p {
+        font-size: 1rem; // Smaller paragraph text
+        margin-bottom: $space-md;
+        line-height: 1.5;
+      }
+    }
+  }
+
+  @media (max-width: 480px) {
+    height: 35vh; // Even shorter for very small screens
+    min-height: 250px;
+
+    .hero-content {
+      h1 {
+        font-size: 1.5rem; // Further reduce font size
+      }
+
+      p {
+        font-size: 0.9rem; // Further reduce paragraph text
+      }
     }
   }
 }
 
 .about-values {
   padding: $space-xl $space-sm;
-  background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%); // Subtle gradient background
+  background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
 
   .container {
     @include container;
@@ -87,7 +115,6 @@
     position: relative;
     padding-bottom: $space-sm;
 
-    // Add an underline effect
     &::after {
       content: '';
       position: absolute;
@@ -274,7 +301,6 @@
       }
     }
 
-    // Navigation arrows
     .slick-prev,
     .slick-next {
       width: 40px;
@@ -303,7 +329,6 @@
       right: -50px;
     }
 
-    // Pagination dots
     .slick-dots {
       margin-top: $space-md;
 

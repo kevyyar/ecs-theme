@@ -77,9 +77,9 @@ function ecs_theme_scripts()
     wp_enqueue_script(
         'ecs-parallax',
         get_template_directory_uri() . '/assets/js/dist/parallax.js',
-        array('jquery'), // Add jQuery dependency
+        array('jquery'),
         filemtime(get_template_directory() . '/assets/js/dist/parallax.js'),
-        true // load in footer
+        true
     );
 
     // Enqueue AOS (Animate On Scroll) library
@@ -119,6 +119,15 @@ function ecs_theme_scripts()
 }
 
 add_action('wp_enqueue_scripts', 'ecs_theme_scripts');
+
+// Dequeue Contact Form 7 scripts on pages where the form isn't used
+function ecs_dequeue_contact_form_7_scripts() {
+    if (!is_page_template('page-contact.php') && !is_front_page()) {
+        wp_dequeue_style('contact-form-7');
+        wp_dequeue_script('contact-form-7');
+    }
+}
+add_action('wp_enqueue_scripts', 'ecs_dequeue_contact_form_7_scripts', 100);
 
 if (function_exists('acf_add_options_page')) {
     acf_add_options_page([
