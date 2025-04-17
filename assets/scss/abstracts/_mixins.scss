@@ -1,5 +1,23 @@
+@import './variables';
+
 @mixin container {
   max-width: 1200px;
   margin: 0 auto;
   padding: 0 $space-sm;
+}
+
+@mixin button($bg-color: $brand-color, $color: #fff) {
+  display: inline-block;
+  padding: $space-sm $space-md;
+  background: $bg-color;
+  color: $color;
+  text-decoration: none;
+  border-radius: 4px;
+  transition: background 0.3s ease;
+  &:hover {
+    background: darken($bg-color, 10%);
+  }
+}
+.cta, .service-link, .consultation-btn {
+  @include button;
 }

@@ -1,5 +1,5 @@
 @import '../abstracts/variables';
-
+@import '../abstracts/mixins';
 /*------------------------------------*\
   #HERO STYLES
 \*------------------------------------*/
@@ -18,15 +18,13 @@
   background-repeat: no-repeat;
   color: #fff;
 
-  // Ensure the background image scales smoothly
-  background-attachment: scroll; // Override any fixed attachment
+  background-attachment: scroll;
 
-  // Optional: Add a fallback background color in case the image fails to load
   background-color: $text-secondary;
 
   .hero-content {
     position: relative;
-    z-index: 2; // Ensure content is above any pseudo-elements or overlays
+    z-index: 2;
 
     h1 {
       font-size: $font-size-xxl;
@@ -41,7 +39,8 @@
     }
 
     .cta {
-      display: inline-block;
+      @include button;
+      /*display: inline-block;
       padding: $space-sm $space-md;
       background: $primary;
       color: $background;
@@ -51,7 +50,7 @@
 
       &:hover {
         background: darken($primary, 10%);
-      }
+      }*/
     }
   }
 }
