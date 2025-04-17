@@ -1,4 +1,5 @@
 @import '../abstracts/variables';
+@import '../abstracts/mixins';
 
 .final-cta {
   padding: $space-xl 0;
@@ -49,22 +50,7 @@
     }
 
     .cta-button {
-      display: inline-block;
-      background-color: $white;
-      color: $brand-color;
-      font-weight: $font-weight-bold;
-      font-size: 1.1rem;
-      padding: $space-sm $space-lg;
-      border-radius: 4px;
-      text-decoration: none;
-      transition: all 0.3s ease;
-      margin-bottom: $space-lg;
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-
-      &:hover {
-        transform: translateY(-3px);
-        box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
-      }
+      @include button;
     }
 
     .contact-info {
@@ -115,7 +101,7 @@
 
     .wpcf7-form {
       p {
-        margin-bottom: 0; // Remove default paragraph margins
+        margin-bottom: 0;
       }
 
       .form-row {
@@ -132,7 +118,7 @@
 
       .form-col {
         flex: 1;
-        min-width: 0; // Prevent overflow in flex
+        min-width: 0;
 
         &.form-col-full {
           flex: 0 0 100%;
@@ -145,7 +131,7 @@
         margin-bottom: $space-xs;
         color: $text-primary;
         font-weight: 500;
-        text-align: left; // Left-align labels
+        text-align: left;
       }
 
       input[type='text'],

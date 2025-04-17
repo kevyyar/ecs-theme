@@ -5,7 +5,7 @@
 
 /* Request a Quote Bar */
 .request-quote-bar {
-  background: $secondary;
+  background: $brand-color;
   text-align: center;
   padding: 10px 0;
   margin-bottom: 15px;
@@ -117,7 +117,7 @@
         cursor: pointer;
 
         &:hover {
-          color: #007bff;
+          color: $brand-color;
         }
       }
 
@@ -125,7 +125,7 @@
         .mega-menu-toggle {
           display: none;
         }
-        
+
         .mega-menu-toggle-label {
           display: inline-block;
           cursor: pointer;
@@ -165,7 +165,7 @@
             }
 
             &:hover {
-              color: #007bff;
+              color: $brand-color;
             }
           }
         }
@@ -194,7 +194,7 @@
     }
 
     &:hover {
-      color: #007bff;
+      color: $brand-color;
     }
   }
 

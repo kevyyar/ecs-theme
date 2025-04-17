@@ -25,7 +25,8 @@
   .hero-content {
     position: relative;
     z-index: 2;
-
+    max-width: 80%;
+    margin: 0 auto;
     h1 {
       font-size: $font-size-xxl;
       margin-bottom: $space-sm;

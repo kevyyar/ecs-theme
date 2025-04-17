@@ -2,14 +2,14 @@
 @import '../abstracts/mixins';
 
 .local-partner {
-  padding: 80px 0;  
+  padding: 80px 0;
   background-color: #333; // Fallback color if image fails to load
   background-size: cover;
   background-position: center;
   position: relative;
   color: white;
   text-align: center;
-  
+
   &::before {
     content: '';
     position: absolute;
@@ -26,7 +26,7 @@
     margin: 0 auto;
     padding: $space-lg $space-md;
     position: relative;
-    z-index: 2; 
+    z-index: 2;
   }
 
   h2 {
@@ -47,12 +47,13 @@
     color: white;
     line-height: 1.8;
     text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+    margin-bottom: $space-lg;
 
     p {
       margin-bottom: $gap-md;
     }
   }
-  
+
   .consultation-btn {
     @include button;
   }
