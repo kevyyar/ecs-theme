@@ -3,19 +3,24 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "gulp": "gulp"
+    "gulp": "gulp",
+    "lint:scss": "stylelint 'assets/scss/**/*.scss'"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "description": "",
   "devDependencies": {
-      "gulp": "^4.0.2",
-      "gulp-sass": "^5.1.0",
-      "sass": "^1.77.6",
-      "gulp-clean-css": "^4.3.0",
-      "gulp-uglify": "^3.0.2",
-      "gulp-imagemin": "^7.1.0",
-      "browser-sync": "^2.29.3"
-    }
+    "browser-sync": "^2.29.3",
+    "gulp": "^4.0.2",
+    "gulp-clean-css": "^4.3.0",
+    "gulp-imagemin": "^7.1.0",
+    "gulp-sass": "^5.1.0",
+    "gulp-stylelint": "^13.0.0",
+    "gulp-uglify": "^3.0.2",
+    "sass": "^1.77.6",
+    "stylelint": "^16.18.0",
+    "stylelint-config-prettier": "^9.0.5",
+    "stylelint-config-standard-scss": "^14.0.0"
+  }
 }

@@ -14,10 +14,15 @@
   text-decoration: none;
   border-radius: 4px;
   transition: background 0.3s ease;
+
   &:hover {
     background: darken($bg-color, 10%);
   }
 }
-.cta, .service-link, .consultation-btn {
+
+.cta,
+.service-link,
+.consultation-btn,
+.cta-button {
   @include button;
 }

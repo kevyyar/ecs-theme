@@ -19,8 +19,7 @@
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
     gap: $space-md;
-    justify-items: center;
-    align-items: center;
+    place-items: center center;
   }
 
   .company-logo {

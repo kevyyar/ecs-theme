@@ -1,8 +1,9 @@
 @import '../abstracts/variables';
 @import '../abstracts/mixins';
-/*------------------------------------*\
+
+/* ------------------------------------*\
   #SERVICES SECTION STYLES
-\*------------------------------------*/
+\*------------------------------------ */
 .services {
   margin: 80px 0;
   text-align: center;
@@ -46,10 +47,6 @@
       p {
         font-size: 1rem;
         margin-bottom: 15px;
-      }
-
-      .service-link {
-        @include button;
       }
     }
   }

@@ -1,9 +1,9 @@
 @import '../abstracts/variables';
 @import '../abstracts/mixins';
 
-/*------------------------------------*\
+/* ------------------------------------*\
   #FOOTER STYLES
-\*------------------------------------*/
+\*------------------------------------ */
 .site-footer {
   background-color: $background-alt;
   color: $text-primary;
@@ -17,6 +17,7 @@
 
 .footer-columns {
   display: grid;
+
   // grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   grid-template-columns: 3fr 1fr 2fr;
   gap: 30px;
@@ -95,10 +96,4 @@
 .footer-column .contact-phone i,
 .footer-column .contact-email i {
   font-size: 1.1em;
-}
-
-@media (max-width: 768px) {
-  .footer-columns {
-    grid-template-columns: 1fr;
-  }
 }

@@ -17,7 +17,7 @@
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0, 0, 0, 0.65);
+    background: rgb(0 0 0 / 65%);
     z-index: 1;
   }
 
@@ -33,9 +33,9 @@
     font-size: $font-size-xl;
     margin-bottom: $space-md;
     color: white;
-    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+    text-shadow: 0 2px 4px rgb(0 0 0 / 30%);
 
-    @media (max-width: 768px) {
+    @media (width <= 768px) {
       font-size: 1.8em;
     }
   }
@@ -46,15 +46,11 @@
     font-size: $font-size-base;
     color: white;
     line-height: 1.8;
-    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+    text-shadow: 0 1px 2px rgb(0 0 0 / 20%);
     margin-bottom: $space-lg;
 
     p {
       margin-bottom: $gap-md;
     }
-  }
-
-  .consultation-btn {
-    @include button;
   }
 }

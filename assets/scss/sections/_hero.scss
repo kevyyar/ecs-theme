@@ -1,8 +1,9 @@
 @import '../abstracts/variables';
 @import '../abstracts/mixins';
-/*------------------------------------*\
+
+/* ------------------------------------*\
   #HERO STYLES
-\*------------------------------------*/
+\*------------------------------------ */
 .hero {
   position: relative;
   text-align: center;
@@ -17,9 +18,7 @@
   will-change: background-position;
   background-repeat: no-repeat;
   color: #fff;
-
   background-attachment: scroll;
-
   background-color: $text-secondary;
 
   .hero-content {
@@ -27,31 +26,17 @@
     z-index: 2;
     max-width: 80%;
     margin: 0 auto;
+
     h1 {
       font-size: $font-size-xxl;
       margin-bottom: $space-sm;
-      text-shadow: 2px 3px 4px rgba(0, 0, 0, 0.4);
+      text-shadow: 2px 3px 4px rgb(0 0 0 / 40%);
     }
 
     p {
       font-size: $font-size-lg;
       margin-bottom: $space-lg;
-      text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
-    }
-
-    .cta {
-      @include button;
-      /*display: inline-block;
-      padding: $space-sm $space-md;
-      background: $primary;
-      color: $background;
-      text-decoration: none;
-      border-radius: 5px;
-      transition: background 0.3s ease;
-
-      &:hover {
-        background: darken($primary, 10%);
-      }*/
+      text-shadow: 1px 1px 2px rgb(0 0 0 / 50%);
     }
   }
 }

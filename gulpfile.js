@@ -32,7 +32,7 @@ function watchTask() {
     notify: false,
   });
   watch('assets/scss/**/*.scss', sassTask);
-  watch('assets/js/src/*.js', jsTask); // Watch only the src directory
+  watch('assets/js/src/*.js', jsTask);
   watch('**/*.php', browserSync.reload);
 }
 

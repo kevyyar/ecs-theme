@@ -22,8 +22,10 @@
 body {
   /* 4. Add accessible line-height */
   line-height: 1.5;
+
   /* 5. Improve text rendering */
   -webkit-font-smoothing: antialiased;
+
   /* setting google fonts */
   font-family: $font-primary;
   background-color: $background;
@@ -62,6 +64,7 @@ h6 {
 p {
   text-wrap: pretty;
 }
+
 h1,
 h2,
 h3,
