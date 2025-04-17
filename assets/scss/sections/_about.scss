@@ -8,7 +8,7 @@
   position: relative;
   text-align: left;
   padding: $space-xl $space-sm;
-  height: 70vh;
+  height: 100vh;
   min-height: 500px;
   display: flex;
   flex-direction: column;
@@ -16,9 +16,6 @@
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  color: $text-primary;
-  background-attachment: scroll;
-  background-color: $text-secondary;
 
   // Add a subtle overlay for better text readability
   &::before {
@@ -28,7 +25,7 @@
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0, 0, 0, 0.4);
+    background: rgba(0, 0, 0, .4);
     z-index: 1;
   }
 
@@ -38,7 +35,6 @@
     max-width: 50%;
     margin: 0;
     padding: $space-md;
-    background: rgba(255, 255, 255, 0.9);
     border-radius: 8px;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 
@@ -49,13 +45,14 @@
       font-weight: $font-weight-bold;
       text-transform: uppercase;
       letter-spacing: 1px;
+      text-shadow: 2px 3px 4px rgba(0,0,0,.4);
     }
 
     p {
       font-size: $font-size-lg;
       margin-bottom: $space-lg;
       line-height: 1.6;
-      color: $text-primary;
+      color: $white;
     }
   }
 
