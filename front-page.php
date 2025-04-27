@@ -199,26 +199,21 @@
 		<div class="container">
 			<div class="cta-grid">
 				<div class="cta-content">
-					<?php if ($headline = get_field('final_cta_headline')) : ?>
-						<h2><?php echo esc_html($headline); ?></h2>
-					<?php else : ?>
-						<h2>Ready for a Spotless Seattle Workspace?</h2>
-					<?php endif; ?>
-
-					<?php if ($supporting_text = get_field('final_cta_supporting_text')) : ?>
-						<div class="supporting-text"><?php echo esc_html($supporting_text); ?></div>
-					<?php else : ?>
-						<div class="supporting-text">Experience the Element difference with our professional cleaning services. Let us help you maintain a clean, healthy environment for your business.</div>
-					<?php endif; ?>
-
-					<?php
-					$cta_text = get_field('final_cta_button_text') ?: 'Get Your Free Quote Today';
-					$cta_link = get_field('final_cta_button_link') ?: get_permalink(get_page_by_path('contact'));
-					?>
-					<a href="<?php echo esc_url($cta_link); ?>" class="cta-button">
-						<?php echo esc_html($cta_text); ?>
-					</a>
-
+					<div class="contact-content">
+						<h2><?php echo esc_html(get_field('final_cta_headline') ?: 'You’re Making the Right Choice'); ?></h2>
+						<h3 id="expectations-heading">What to Expect Next:</h3>
+						<ul class="contact-expectations" aria-labelledby="expectations-heading">
+							<?php if (have_rows('final_cta_expectations')) : ?>
+								<?php while (have_rows('final_cta_expectations')) : the_row(); ?>
+									<li><?php echo esc_html(get_sub_field('expectation')); ?></li>
+								<?php endwhile; ?>
+							<?php else : ?>
+								<li>Analysis: Are we the right fit??? We’ll review your needs, budget, and timeline to ensure a perfect match.</li>
+								<li>Solutions: We’ll identify your cleaning challenges and propose sustainable, effective solutions.</li>
+								<li>Decision: Once we align on the plan, it’s a simple yes or no to get started with a spotless space.</li>
+							<?php endif; ?>
+						</ul>
+					</div>
 					<div class="contact-info">
 						<?php if ($phone = get_field('company_phone', 'option')) : ?>
 							<div class="contact-item">

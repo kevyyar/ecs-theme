@@ -3,11 +3,8 @@
 
 .final-cta {
   padding: $space-xl 0;
-  background: linear-gradient(
-    135deg,
-    $brand-color 0%,
-    darken($brand-color, 20%) 100%
-  );
+  background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+
   color: white;
   text-align: center;
 
@@ -33,25 +30,66 @@
     text-align: left;
 
     @media (width <= 768px) {
-      text-align: center;
+      // text-align: center;
     }
+    .contact-content {
+      text-align: left;
 
-    h2 {
-      font-size: $font-size-xl;
-      margin-bottom: $space-sm;
-      font-weight: $font-weight-bold;
-      color: white;
-    }
+      h2 {
+        font-size: $font-size-xl;
+        margin-bottom: $space-sm;
+        color: $text-primary;
+        position: relative;
+        padding-bottom: $space-sm;
 
-    .supporting-text {
-      font-size: $font-size-lg;
-      margin-bottom: $space-lg;
-      line-height: 1.5;
-    }
+        &::after {
+          content: '';
+          position: absolute;
+          bottom: 0;
+          left: 0;
+          width: 50px;
+          height: 3px;
+          background: $brand-color;
+        }
+      }
 
-    .cta-button {
-      background-color: $background-alt;
-      color: $text-primary;
+      .contact-text {
+        font-size: $font-size-md;
+        color: $text-secondary;
+        line-height: 1.8;
+        margin-bottom: $space-lg;
+      }
+
+      h3 {
+        font-size: 1.5rem;
+        margin-bottom: $space-md;
+        color: $brand-color;
+        font-style: italic;
+        font-weight: $font-weight-regular;
+      }
+
+      .contact-expectations {
+        list-style: none;
+        padding: 0;
+        margin-bottom: $space-lg;
+
+        li {
+          font-size: $font-size-md;
+          color: $text-secondary;
+          line-height: 1.8;
+          margin-bottom: $space-sm;
+          position: relative;
+          padding-left: $space-md;
+
+          &:before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: $brand-color;
+            font-size: 1.2rem;
+          }
+        }
+      }
     }
 
     .contact-info {
@@ -88,7 +126,7 @@
   }
 
   .cta-form {
-    background: rgba($white, 0.95);
+    background-color: $white;
     padding: $space-md;
     border-radius: 8px;
     box-shadow: 0 4px 12px rgb(0 0 0 / 10%);
