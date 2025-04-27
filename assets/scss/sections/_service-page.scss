@@ -87,10 +87,11 @@
     h1 {
       font-size: $font-size-xxl;
       margin-bottom: 1rem;
-      color: $brand-color;
+      color: $white;
       font-weight: 700;
       text-transform: uppercase;
       letter-spacing: 1px;
+      text-shadow: 2px 3px 4px rgb(0 0 0 / 40%);
     }
 
     p {
