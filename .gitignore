@@ -2,5 +2,7 @@ node_modules/
 vendor/
 .vscode/
 .DS_Store
+phpcs.xml
+
 
 *.md

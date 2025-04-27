@@ -28,7 +28,7 @@ function imagesTask() {
 
 function watchTask() {
   browserSync.init({
-    proxy: 'http://element-cleaning-systems.local/',
+    proxy: 'http://element-janitorial.local/',
     notify: false,
   });
   watch('assets/scss/**/*.scss', sassTask);

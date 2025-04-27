@@ -5,6 +5,7 @@ function ecs_theme_setup()
     add_theme_support('title-tag'); // SEO title tag
     add_theme_support('post-thumbnails'); // featured images
     add_theme_support('custom-logo'); // logo in customizer
+    add_theme_support('site-icon'); // favicon support
 
     // register main navigation menu
     register_nav_menus([
@@ -16,7 +17,8 @@ function ecs_theme_setup()
 add_action('after_setup_theme', 'ecs_theme_setup');
 
 // Register Footer Widget Areas
-function ecs_widgets_init() {
+function ecs_widgets_init()
+{
     register_sidebar([
         'name'          => 'Footer Column 1',
         'id'            => 'footer_column_1',
@@ -121,7 +123,8 @@ function ecs_theme_scripts()
 add_action('wp_enqueue_scripts', 'ecs_theme_scripts');
 
 // Dequeue Contact Form 7 scripts on pages where the form isn't used
-function ecs_dequeue_contact_form_7_scripts() {
+function ecs_dequeue_contact_form_7_scripts()
+{
     if (!is_page_template('page-contact.php') && !is_front_page()) {
         wp_dequeue_style('contact-form-7');
         wp_dequeue_script('contact-form-7');
@@ -139,7 +142,8 @@ if (function_exists('acf_add_options_page')) {
     ]);
 }
 
-function ecs_load_theme_textdomain() {
+function ecs_load_theme_textdomain()
+{
     load_theme_textdomain('ecs', get_template_directory() . '/languages');
 }
 add_action('after_setup_theme', 'ecs_load_theme_textdomain');
@@ -150,7 +154,8 @@ add_action('after_setup_theme', 'ecs_load_theme_textdomain');
  * @param string $content El contenido del WYSIWYG.
  * @return string Contenido procesado.
  */
-function ecs_process_footer_content($content) {
+function ecs_process_footer_content($content)
+{
     // Reemplazar [phone]...[/phone] con un link tel: y un ícono
     $content = preg_replace(
         '/\[phone\](.*?)\[\/phone\]/',
