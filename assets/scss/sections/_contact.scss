@@ -38,10 +38,11 @@
     h1 {
       font-size: $font-size-xxl;
       margin-bottom: $space-sm;
-      color: $brand-color;
+      color: $white;
       font-weight: $font-weight-bold;
       text-transform: uppercase;
       letter-spacing: 1px;
+      text-shadow: 2px 3px 4px rgb(0 0 0 / 40%);
     }
   }
 
