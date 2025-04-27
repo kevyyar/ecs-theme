@@ -84,6 +84,15 @@ function ecs_theme_scripts()
         true
     );
 
+    // Enqueue minified FAQ Accordion JS
+    wp_enqueue_script(
+        'ecs-faq-accordion',
+        get_template_directory_uri() . '/assets/js/dist/faq-accordion.js',
+        array('jquery'),
+        filemtime(get_template_directory() . '/assets/js/dist/faq-accordion.js'),
+        true
+    );
+
     // Enqueue AOS (Animate On Scroll) library
     wp_enqueue_style('aos', 'https://unpkg.com/aos@2.3.1/dist/aos.css', [], '2.3.1');
     wp_enqueue_script('aos', 'https://unpkg.com/aos@2.3.1/dist/aos.js', [], '2.3.1', true);

@@ -44,6 +44,8 @@ get_header(); ?>
     </div>
   </section>
 
+
+  <!-- Before & After Comparison Section -->
   <?php
   $before_image = get_field('service_before_image');
   $after_image = get_field('service_after_image');
@@ -91,6 +93,39 @@ get_header(); ?>
     </section>
   <?php endif;
   ?>
+
+  <?php if (have_rows('service_faq_items')) : ?>
+    <section class="service-faq" data-aos="fade-up">
+      <div class="container">
+        <?php if ($faq_title = get_field('service_faq_title')) : ?>
+          <h2 class="faq-section-title"><?php echo esc_html($faq_title); ?></h2>
+        <?php else : ?>
+          <h2 class="faq-section-title">Frequently Asked Questions</h2>
+        <?php endif; ?>
+
+        <div class="faq-list">
+          <?php while (have_rows('service_faq_items')) : the_row(); ?>
+            <?php
+            $question = get_sub_field('faq_question');
+            $answer = get_sub_field('faq_answer');
+            ?>
+            <?php if ($question && $answer) : ?>
+              <div class="faq-item">
+                <button class="faq-question" aria-expanded="false">
+                  <span><?php echo esc_html($question); ?></span>
+                  <span class="faq-indicator" aria-hidden="true">+</span>
+                </button>
+                <div class="faq-answer" hidden>
+                  <?php echo wp_kses_post($answer); ?>
+                </div>
+              </div>
+            <?php endif; ?>
+          <?php endwhile; ?>
+        </div>
+
+      </div>
+    </section>
+  <?php endif; ?>
 
   <!-- Call to Action Section -->
   <section class="service-cta" data-aos="fade-up">
