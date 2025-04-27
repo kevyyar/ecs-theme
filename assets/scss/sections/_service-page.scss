@@ -49,7 +49,6 @@
   }
 }
 
-/* New styles for individual service page (page-service.php) */
 .service-hero {
   position: relative;
   text-align: left;
@@ -84,7 +83,7 @@
     background: none;
     border-radius: 0;
     box-shadow: none;
-    
+
     h1 {
       font-size: $font-size-xxl;
       margin-bottom: 1rem;
@@ -160,7 +159,7 @@
         left: 0;
         width: 50px;
         height: 3px;
-        background: $brand-color; ;
+        background: $brand-color;
       }
     }
 
@@ -296,7 +295,11 @@
 
 .service-cta {
   padding: 4rem 1rem;
-  background: linear-gradient(135deg, #4caf50 0%, rgb(45.1155378486, 103.8844621514, 47.4900398406) 100%);
+  background: linear-gradient(
+    135deg,
+    #4caf50 0%,
+    rgb(45.1155378486, 103.8844621514, 47.4900398406) 100%
+  );
   color: $white;
   text-align: center;
 
