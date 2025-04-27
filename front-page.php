@@ -25,9 +25,35 @@
 				<?php if (have_rows('companies_that_trust_us')): ?>
 					<div class="companies-grid" data-aos="fade-up">
 						<?php while (have_rows('companies_that_trust_us')): the_row(); ?>
-							<?php if ($logo = get_sub_field('company_logo')): ?>
+							<?php if ($logo_array = get_sub_field('company_logo')): ?>
 								<div class="company-logo">
-									<img src="<?php echo esc_url($logo['sizes']['thumbnail']); ?>" alt="<?php echo esc_attr(get_sub_field('company_name') ?: 'Company Logo'); ?>" title="<?php echo esc_attr(get_sub_field('company_name')); ?>">
+									<?php
+									$image_size = 'full';
+
+									$image_url = isset($logo_array['sizes'][$image_size]) ? $logo_array['sizes'][$image_size] : $logo_array['url'];
+
+									$alt_text = get_sub_field('company_name');
+									if (empty($alt_text)) {
+										$alt_text = $logo_array['alt'];
+									}
+									if (empty($alt_text)) {
+										$alt_text = $logo_array['title'];
+									}
+									$alt_text = $alt_text ?: 'Company Logo';
+
+
+									$width = isset($logo_array['sizes'][$image_size . '-width']) ? $logo_array['sizes'][$image_size . '-width'] : $logo_array['width'];
+									$height = isset($logo_array['sizes'][$image_size . '-height']) ? $logo_array['sizes'][$image_size . '-height'] : $logo_array['height'];
+									?>
+									<img
+										src="<?php echo esc_url($image_url); ?>"
+										alt="<?php echo esc_attr($alt_text); ?>"
+										title="<?php echo esc_attr(get_sub_field('company_name') ?: $logo_array['title']); ?>"
+										<?php if ($width && $height) : ?>
+										width="<?php echo esc_attr($width); ?>"
+										height="<?php echo esc_attr($height); ?>"
+										<?php endif; ?>
+										loading="lazy" />
 								</div>
 							<?php endif; ?>
 						<?php endwhile; ?>
@@ -63,6 +89,7 @@
 			</div>
 		</section>
 	</div>
+	<!-- Services Section -->
 	<section class="services" data-aos="fade-up">
 		<h2>Our Services</h2>
 		<?php if (have_rows('services')) : ?>
