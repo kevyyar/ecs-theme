@@ -44,6 +44,54 @@ get_header(); ?>
     </div>
   </section>
 
+  <?php
+  $before_image = get_field('service_before_image');
+  $after_image = get_field('service_after_image');
+  $comparison_title = get_field('service_before_after_title');
+
+  // Only display the section if BOTH images are set
+  if ($before_image && $after_image) :
+    $before_image_url = is_array($before_image) ? $before_image['url'] : wp_get_attachment_image_url($before_image, 'large');
+    $after_image_url = is_array($after_image) ? $after_image['url'] : wp_get_attachment_image_url($after_image, 'large');
+
+    $before_alt = '';
+    if (is_array($before_image) && !empty($before_image['alt'])) {
+      $before_alt = esc_attr($before_image['alt']);
+    } elseif (is_numeric($before_image)) { // else if it's an attachment ID
+      $before_alt = esc_attr(get_post_meta($before_image, '_wp_attachment_image_alt', true));
+    }
+    // Fallback alt text
+    if (empty($before_alt)) {
+      $before_alt = 'Before cleaning - ' . esc_attr(get_the_title());
+    }
+
+    $after_alt = '';
+    if (is_array($after_image) && !empty($after_image['alt'])) {
+      $after_alt = esc_attr($after_image['alt']);
+    } elseif (is_numeric($after_image)) { // else if it's an attachment ID 
+      $after_alt = esc_attr(get_post_meta($after_image, '_wp_attachment_image_alt', true));
+    }
+    // Fallback alt text
+    if (empty($after_alt)) {
+      $after_alt = 'After cleaning - ' . esc_attr(get_the_title());
+    }
+
+  ?>
+    <section class="service-comparison" data-aos="fade-up">
+      <div class="container">
+        <?php if ($comparison_title) : ?>
+          <h2 class="comparison-title"><?php echo esc_html($comparison_title); ?></h2>
+        <?php endif; ?>
+
+        <div class="twentytwenty-container">
+          <img src="<?php echo esc_url($before_image_url); ?>" alt="<?php echo $before_alt; ?>" />
+          <img src="<?php echo esc_url($after_image_url); ?>" alt="<?php echo $after_alt; ?>" />
+        </div>
+      </div>
+    </section>
+  <?php endif;
+  ?>
+
   <!-- Call to Action Section -->
   <section class="service-cta" data-aos="fade-up">
     <div class="container">

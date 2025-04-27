@@ -118,6 +118,46 @@ function ecs_theme_scripts()
         ";
         wp_add_inline_script('slick-js', $slick_init);
     }
+
+    // Enqueue TwentyTwenty Assets
+    if (is_page_template('page-service.php')) {
+        // Enqueue TwentyTwenty CSS
+        wp_enqueue_style(
+            'twentytwenty-css',
+            get_template_directory_uri() . '/assets/vendor/twentytwenty/css/twentytwenty.css',
+            array(),
+            '1.0'
+        );
+        // Enqueue TwentyTwenty JS deps
+        wp_enqueue_script(
+            'jquery-event-move',
+            get_template_directory_uri() . '/assets/vendor/twentytwenty/js/jquery.event.move.js',
+            array(),
+            '1.0',
+            true
+        );
+        // Enqueue TwentyTwenty JS 
+        wp_enqueue_script(
+            'jquery-twentytwenty',
+            get_template_directory_uri() . '/assets/vendor/twentytwenty/js/jquery.twentytwenty.js',
+            array(),
+            '1.0',
+            true
+        );
+
+        // Initialize TwentyTwenty on the service page
+        $twentytwenty_init = "
+        jQuery(document).ready(function($) {
+            if (typeof $.fn.twentytwenty === 'function') {
+                $('.twentytwenty-container').twentytwenty();
+                console.log('TwentyTwenty initialized.');
+            } else {
+                console.error('TwentyTwenty function not found.');
+            }
+        });
+    ";
+        wp_add_inline_script('jquery-twentytwenty', $twentytwenty_init);
+    }
 }
 
 add_action('wp_enqueue_scripts', 'ecs_theme_scripts');

@@ -345,3 +345,62 @@
     }
   }
 }
+
+.service-comparison {
+  padding: 4rem 1rem;
+  background-color: $background-alt;
+
+  .container {
+    max-width: $container-width;
+    margin: 0 auto;
+    padding: 0 $space-sm;
+  }
+
+  .comparison-title {
+    text-align: center;
+    font-size: $font-size-xl;
+    color: $text-primary;
+    margin-bottom: $space-lg;
+    position: relative;
+    padding-bottom: 1rem;
+
+    &::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 50px;
+      height: 3px;
+      background: $brand-color;
+    }
+  }
+
+  // Style the wrapper for the TwentyTwenty instance
+  .twentytwenty-container {
+    max-width: 800px;
+    margin: 0 auto;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    overflow: hidden;
+    img {
+      display: block;
+      max-width: 100%;
+      height: auto;
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .service-comparison {
+    padding: 2rem 1rem;
+
+    .comparison-title {
+      font-size: $font-size-xl;
+    }
+
+    .twentytwenty-container {
+      max-width: 95%;
+    }
+  }
+}
